@@ -13,7 +13,7 @@ while contador_do_loop < len(texto):
     # contagem da palavra pesquisada
     contador_de_letra = texto.count(pesquisa)
 
-    # pula espaço no texto
+    # pula espaço no texto (elimina os espaços do texto a ser analisado)
     if pesquisa == ' ':
         contador_do_loop +=1
         continue
