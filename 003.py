@@ -5,10 +5,12 @@ Bom dia 0-11, Boa tarde 12-17 e Boa noite 18-23.
 """
 
 print("\nBom dia 0-11, Boa tarde 12-17 e Boa noite 18-23.\n")
-hora_str = input('Que horas são? ')
+hora_str = input('Informe as horas em número inteiro: ')
 
 try:
-    hora_int = int(hora_str) 
+    # converter para número inteiro
+    hora_int = int(hora_str)
+     
     if hora_int < 0:
         print('\nNão existe hora negativa.\n')
     elif 0 <= hora_int <= 11 :
