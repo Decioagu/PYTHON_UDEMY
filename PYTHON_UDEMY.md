@@ -12,5 +12,7 @@ Segue abaixo uma lista de exercício _comentados_ em **Python** do curso da plat
 * **005** – Calculadora
 * **006a** – Conta texto e informa letra como maior quantidade (While)
 * **006b** – Conta texto e informa letra como maior quantidade (for)
+* **007** – Jogo da palavra secreta
+* **008** – Lista de mercado (Inseir, Apagar e Ver listagem)
 
 ***
