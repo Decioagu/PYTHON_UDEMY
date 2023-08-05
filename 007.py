@@ -14,7 +14,7 @@ na palavra secreta.
 Faça a contagem de tentativas do seu
 usuário.
 """
-import os
+import os # importar modulo "os"
 
 # variáveis globais
 palavra_secreta = 'Decio'.upper()
