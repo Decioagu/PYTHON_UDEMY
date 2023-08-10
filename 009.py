@@ -100,7 +100,7 @@ if cpf.isnumeric(): # testa se foi digitado apenas números
             cpf_formatado += '-'
     
     # exibir cpf em "string" formatado
-    print(f'\nCPF = {cpf_formatado[:14]}\n') # resposta final ao usuário
+    print(f'\nCPF = {cpf_formatado}\n') # resposta final ao usuário
    
 else:
     # resposta de erro para usuário
