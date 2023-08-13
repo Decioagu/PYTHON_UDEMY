@@ -1,4 +1,4 @@
-# Exercicios em *Python*
+# Exercícios em *Python*
 
 Segue abaixo uma lista de exercício _comentados_ em **Python** do curso da plataforma **Udemy**.
 
@@ -13,6 +13,7 @@ Segue abaixo uma lista de exercício _comentados_ em **Python** do curso da plat
 * **006a** – Conta texto e informa letra como maior quantidade (While)
 * **006b** – Conta texto e informa letra como maior quantidade (for)
 * **007** – Jogo da palavra secreta
-* **008** – Lista de mercado (Inseir, Apagar e Ver listagem)
-
+* **008** – Lista de mercado (Inserir, Apagar e Ver listagem)
+* **008** – Calculadora de digito CPF (calcula os dois últimos do CPF)
+* **010** – Manipulação de lista é dicionario (perguntas e respostas)
 ***

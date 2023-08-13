@@ -29,7 +29,7 @@ print(' Perguntas e respostas '.center(100, '=')) # centralizar título
 for index1, p in enumerate(perguntas):
 
     # "Perguntas" esta sendo acessada na lista dentro do dicionário
-    resposta = input(perguntas[index1]['Pergunta']) # resposta do usuário
+    print(perguntas[index1]['Pergunta'])
     print()
     print('Escolha uma opção abaixo:')
 
@@ -38,6 +38,9 @@ for index1, p in enumerate(perguntas):
         print(f'{index2}) {o}')
     print()
     
+    resposta = input('Resposta: ') # resposta do usuário
+    try:
+    resposta -= 1
     # resposta ao usuário
     if resposta == perguntas[index1]['Resposta']: # Certo
         print('Certa a resposta!')
