@@ -16,4 +16,7 @@ Segue abaixo uma lista de exercício _comentados_ em **Python** do curso da plat
 * **008** – Lista de mercado (Inserir, Apagar e Ver listagem)
 * **008** – Calculadora de digito CPF (calcula os dois últimos do CPF)
 * **010** – Manipulação de lista é dicionario (perguntas e respostas)
+* **011a** – Usar função para retornar 1ª duplicação de uma lista
+* **011b** – Usar função para retornar uma nova lista com itens duplicado
+* **011c** – Usar função para retornar uma nova lista com itens NÃO duplicado
 ***

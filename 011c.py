@@ -1,6 +1,5 @@
-"""
-Criar nova lista com item repetido
-"""
+
+# identificar itens NÃO duplicados na lista 
 lista_de_listas_de_inteiros = [
     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     [9, 1, 8, 9, 9, 7, 2, 1, 6, 8],
@@ -16,20 +15,27 @@ lista_de_listas_de_inteiros = [
     [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
 ]
 
-lista_com_duplicado = []
-
-def encontra_numeros_duplicado(lista_de_inteiros):
+# filtro para itens NÃO duplicado na lista
+def encontra_numeros_nao_duplicado(lista_de_inteiros):
     numeros_checados = []
+    contador = 0
 
-    for numero in lista_de_inteiros: # ler itens da lista
-        # item da lista = "ista_de_inteiros" esta no conjunto = "numeros_checados"
-        if numero not in numeros_checados:
-            numeros_checados.append(numero)
+    # percorre a lista e compara
+    for numero1 in lista_de_inteiros: 
+        for numero2 in lista_de_inteiros:
+            if numero1 == numero2:
+                contador += 1
+
+        if contador == 1: # contador = 1 (armazena)
+            numeros_checados.append(numero1)
+            contador = 0
+        contador = 0
 
     return numeros_checados
 
 # desempacota "lista_de_listas_de_inteiros" e envia lista individual a função "encontra_primeiro_duplicado"
 for lista in lista_de_listas_de_inteiros:
-   lista_com_duplicado = encontra_numeros_duplicado(lista)
-
-for 
+    print(
+        f"{lista=}\t", # exibi a lista
+        f"Primeira repetição {encontra_numeros_nao_duplicado(lista)}"  # resposta função "encontra_primeiro_duplicado"
+    )

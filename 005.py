@@ -57,7 +57,7 @@ while continuar_loop:
 
     except Exception as erro:
         # mesagem de erro para valores não validos
-        print(f'\nErro de operação => ({erro})')
+        print(f'\nErro de operação => ({erro.__class__} : {erro})')
         print('Verifique o valor digitado!!!')
 
 print('\nPrograma finalizado...\n')
