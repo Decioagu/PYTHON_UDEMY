@@ -18,24 +18,24 @@ lista_de_listas_de_inteiros = [
 # filtro para itens duplicado na lista
 def encontra_numeros_duplicado(lista_de_inteiros):
     numeros_checados = set() # uso de set para não haver valor repetido na "nova lista"
-    contador = 2
+    contador = 0
 
-    # percorre a lista e compara
+    # percorre a lista e compara números
     for numero1 in lista_de_inteiros: 
         for numero2 in lista_de_inteiros:
             if numero1 == numero2:
-                contador -= 1 
+                contador += 1 
 
-            if contador == 0:  # contador = 0 (armazena)
-                numeros_checados.add(numero1)
-                contador = 2
-        contador = 2
+            if contador == 2:  # contador = 0 (número apareceu 2 vezes na lista)
+                numeros_checados.add(numero1) # armazene o número
+                contador = 0 # zerar contador
+        contador = 0 # zerar contador apos o "for" (numero2)
         
     return list(numeros_checados) # "nova lista"
 
-# desempacota "lista_de_listas_de_inteiros" e envia lista individual a função "encontra_primeiro_duplicado"
+# desempacota "lista_de_listas_de_inteiros" e envia lista individual a função "encontra_numeros_duplicado"
 for lista in lista_de_listas_de_inteiros:
     print(
         f"{lista=}\t", # exibi a lista
-        f"Primeira repetição {encontra_numeros_duplicado(lista)}"  # resposta função "encontra_primeiro_duplicado"
+        f"Primeira repetição {encontra_numeros_duplicado(lista)}"  # resposta função "encontra_numeros_duplicado"
     )

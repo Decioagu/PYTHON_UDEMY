@@ -26,23 +26,25 @@ lista_de_listas_de_inteiros = [
     [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
 ]
 
+# filtro para item duplicado na lista
 def encontra_primeiro_duplicado(lista_de_inteiros):
-    numeros_checados = set()
+    numeros_checados = []
     primeiro_duplicado = -1
 
     for numero in lista_de_inteiros: # ler itens da lista
-        # item da lista = "lista_de_inteiros" esta no conjunto = "numeros_checados"
-        if numero in numeros_checados:
-            primeiro_duplicado = numero
+        
+        # item da (lista = "lista_de_inteiros") consta na (lista = "numeros_checados")
+        if numero in numeros_checados: # se sim
+            primeiro_duplicado = numero # armazene este numero número
             break # interrompe "for"
 
-        numeros_checados.add(numero) # adiciona elementos no conjunto "numeros_checados"
+        numeros_checados.append(numero) # adiciona todos os novos elementos na lista "numeros_checados"
 
     return primeiro_duplicado # resposta
 
-# desempacota "lista_de_listas_de_inteiros" e envia lista individual a função "encontra_primeiro_duplicado"
+# desempacota "lista_de_listas_de_inteiros" e envia cada lista individual a função "encontra_primeiro_duplicado"
 for lista in lista_de_listas_de_inteiros:
     print(
-        f"{lista=}\t", # exibi a lista
+        f"{lista=}\t", # exibi cada lista individualmente
         f"Primeira repetição {encontra_primeiro_duplicado(lista)}"  # resposta função "encontra_primeiro_duplicado"
     )

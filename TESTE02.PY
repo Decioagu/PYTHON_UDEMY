@@ -1,8 +1,17 @@
-a = [1,2,2,3,3,3,4,4,4,4]
-b = []
-cont = 2
+def executa(funcao, *args):
+    return funcao(*args)
 
-for n1 in a:
-    for n2 in a:
-        if n1 == n1:
+def soma(x, y):
+    return x + y
+
+print(
+    executa(
+        lambda x, y: x + y,
+        2, 3
+    ),
+    executa(soma, 2, 3),
+    soma(2,3)
+)
+
+
 

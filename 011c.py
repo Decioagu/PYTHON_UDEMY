@@ -26,10 +26,10 @@ def encontra_numeros_nao_duplicado(lista_de_inteiros):
             if numero1 == numero2:
                 contador += 1
 
-        if contador == 1: # contador = 1 (armazena)
-            numeros_checados.append(numero1)
-            contador = 0
-        contador = 0
+        if contador == 1: # contador = 1 (número apareceu somente 1 vezes na lista)
+            numeros_checados.append(numero1) # armazene o número
+            contador = 0 # zerar contador
+        contador = 0 # zerar contador apos o "for" (numero2) 
 
     return numeros_checados
 
