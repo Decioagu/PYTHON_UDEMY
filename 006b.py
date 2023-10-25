@@ -1,3 +1,7 @@
+'''
+    Identifica na variável texto qual a letra que mais aparece e sua quantidade 
+'''
+
 texto = 'Decio Santana de Aguiar'
 letra_que_mais_aparece = 0
 letra = ''
