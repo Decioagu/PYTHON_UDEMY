@@ -64,7 +64,7 @@ if __name__ == '__main__':
     main()
 
 '''
-if __name__ == '__main__': 
+if __name__ == '__main__': # só é ativado executando diretamente este arquivo Python
     print()
     print('Realizado com sucesso!')
     print()

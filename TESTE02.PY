@@ -1,72 +1,66 @@
-# Exercício com classes
-# 1 - Crie uma classe Carro (Nome)
-# 2 - Crie uma classe Motor (Nome)
-# 3 - Crie uma classe Fabricante (Nome)
-# 4 - Faça a ligação entre Carro tem um Motor
-# Obs.: Um motor pode ser de vários carros
-# 5 - Faça a ligação entre Carro e um Fabricante
-# Obs.: Um fabricante pode fabricar vários carros
-# Exiba o nome do carro, motor e fabricante na tela
 
-class Motor:
-    def __init__(self, nome_motor):
-        self.nome_motor = nome_motor
+# CONTEXT MANAGER (aula 240)
+'''
+    Context Manager com classes - Criando e Usando gerenciadores de contexto
+    Você pode implementar seus próprios protocolos
+    Para criar um context manager, os métodos __enter__ e __exit__
+    devem ser implementados.
+    O método __exit__ receberá a classe de exceção, a exceção e o
+    traceback. Se ele retornar True, exceção no with será
+    suprimidas.
 
-class Carro:
-    def __init__(self, nome_carro):
-        self.nome_carro = nome_carro
-        self.lista_de_motores = []
-    
-    def motor_carro(self, nome_motor):
-        self.lista_de_motores.append(nome_motor)
+    Ex:
+    with open('aula149.txt', 'w') as arquivo:
+'''
 
-    def ver_lista_carro_motores(self):
-        for motor in self.lista_de_motores:
-            # print(motor.nome_motor)
-            print('Carro:', self.nome_carro, motor.nome_motor)
+class MyOpen:
+    def __init__(self, caminho_arquivo, modo):
+        self.caminho_arquivo = caminho_arquivo
+        self.modo = modo
+        self._arquivo = None
 
-class Fabricante:
-    def __init__(self, nome_fabricante):
-        self.nome_fabricante = nome_fabricante
-        self.lista_de_carros = []
+    def __enter__(self):
+        print('ABRINDO ARQUIVO')
+        self._arquivo = open(self.caminho_arquivo, self.modo, encoding='utf8')
+        return self._arquivo
 
-    def modelo_carro(self, nome_carro, lista_de_motor):
-        temporario = [ nome_carro, lista_de_motor]
-        self.lista_de_carros.append(temporario)
-    
-    def ver_lista_fabricante(self):
-        for carro in self.lista_de_carros:
-            print('Fabricante:', self.nome_fabricante, ', Carro:',*carro)
-        
-        
+    def __exit__(self):
+        print('FECHANDO ARQUIVO')
+        self._arquivo.close()
+      
 
 
+with MyOpen('aula149.txt', 'w') as arquivo:
+    arquivo.write('Linha 1\n')
+    arquivo.write('Linha 2\n') 
+    arquivo.write('Linha 3\n')
+    print('WITH', arquivo)
 
-m1 = Motor('Motor 1.0')
-m2 = Motor('Motor 1.4')
-m3 = Motor('Motor 1.6')
-m4 = Motor('Motor 2.0')
-m5 = Motor('Motor V8')
-m6 = Motor('Motor W')
-m7 = Motor('Motor refrigeração a ar')
+#-----------------------------------------------------------------------------------------------
+class MyOpen:
+    def __init__(self, caminho_arquivo, modo):
+        self.caminho_arquivo = caminho_arquivo
+        self.modo = modo
+        self._arquivo = None
 
-carro1 = Carro('Gol')
-carro1.motor_carro(m1)
-carro1.motor_carro(m2)
+    def __enter__(self):
+        print('ABRINDO ARQUIVO')
+        self._arquivo = open(self.caminho_arquivo, self.modo, encoding='utf8')
+        return self._arquivo
 
-carro2 = Carro('Fusca')
-carro2.motor_carro(m7)
-
-carro3 = Carro('Ferrari')
-carro3.motor_carro(m5)
-
-carro1.ver_lista_carro_motores()
-carro2.ver_lista_carro_motores()
-carro3.ver_lista_carro_motores()
-
-print('-' * 30)
-fabricante1 = Fabricante("VW")
-fabricante1.modelo_carro(carro1.nome_carro, [motor.nome_motor for motor in carro1.lista_de_motores])
-fabricante1.ver_lista_fabricante()
+    def __exit__(self, class_exception, exception_, traceback_):
+        print('FECHANDO ARQUIVO')
+        self._arquivo.close()
+        print('-' * 60)
+        print(class_exception) # exibe class da exceção
+        print(exception_) # exibe tipo da exceção
+        print(traceback_) # exibe objeto da exceção
+        print('-' * 60)
+        return True # ignora a exceção
 
 
+with MyOpen('aula149.txt', 'w') as arquivo:
+    arquivo.write('Linha 1\n')
+    arquivo.write('Linha 2\n', 123) # gerar erro (exceção)
+    arquivo.write('Linha 3\n')
+    print('WITH', arquivo)
