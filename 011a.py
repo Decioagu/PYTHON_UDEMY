@@ -1,5 +1,5 @@
 """
-Exercício
+Exercício:
 Crie uma função que encontra o primeiro duplicado considerando o segundo
 número como a duplicação. Retorne a duplicação considerada.
 Requisitos:

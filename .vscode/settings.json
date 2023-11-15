@@ -1,5 +1,7 @@
 {
     "cSpell.words": [
         "título"
-    ]
+    ],
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.autoImportCompletions": false
 }

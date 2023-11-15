@@ -1,5 +1,5 @@
 '''
-Desafio proposto é a criação de uma CACULADORA com "quatro oprações" para calcular duas variáveis.
+    Desafio proposto é a criação de uma CACULADORA com "quatro oprações" para calcular duas variáveis.
 '''
 
 print('\n--- CAUCULADORA ---')

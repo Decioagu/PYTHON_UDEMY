@@ -1,4 +1,11 @@
-
+"""
+    Exercício:
+    Crie uma função que encontre duplicata e separe os itens que NÃO se repete.
+    Exemplo:
+        [1, 2, 3, 3, 2, 1] -> [1, 2, 3] são duplicados (retorne 3)
+        [1, 2, 3, 4, 5, 6] -> []
+        [1, 2, 4, 9, 8, 9, 4, 8] -> [4, 9, 8]
+"""
 # identificar itens NÃO duplicados na lista 
 lista_de_listas_de_inteiros = [
     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -37,5 +44,5 @@ def encontra_numeros_nao_duplicado(lista_de_inteiros):
 for lista in lista_de_listas_de_inteiros:
     print(
         f"{lista=}\t", # exibi a lista
-        f"Primeira repetição {encontra_numeros_nao_duplicado(lista)}"  # resposta função "encontra_primeiro_duplicado"
+        f"Números que NÃO tiveram repetições {encontra_numeros_nao_duplicado(lista)}"  # resposta função "encontra_primeiro_duplicado"
     )
