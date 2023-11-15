@@ -57,6 +57,7 @@ print("a está presente na sequência:", "a" in my_sequence)
 print("d não está presente na sequência:", "d" in my_sequence)
 
 print('<==========================================================>')
+# atualizado
 
 from collections.abc import Sequence
 
