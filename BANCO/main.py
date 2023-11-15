@@ -8,7 +8,7 @@ Conta (ABC)
     ContaCorrente
     ContaPoupanca
 
-Pessoa (ABC)
+Pessoa
     Cliente
         Clente -> Conta
 
@@ -37,6 +37,7 @@ Banco autentica por um método.
 """
 
 from abc import ABC, abstractmethod
+import contas
 
 class Pessoa(ABC):
 
