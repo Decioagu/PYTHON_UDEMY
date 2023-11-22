@@ -1,17 +1,21 @@
-def executa(funcao, *args):
-    return funcao(*args)
+'''
+A função os.path.join() é uma função embutida do Python que é usada para concatenar 
+vários segmentos de caminho em um único caminho. Os segmentos de caminho são 
+especificados como uma sequência de strings, separadas por vírgulas.
 
-def soma(x, y):
-    return x + y
+A função os.path.join() usa o separador de caminho da plataforma como delimitador 
+para concatenar os segmentos de caminho. No Windows, o separador de caminho é "\", 
+enquanto no Unix e no macOS é "/".
+'''
 
-print(
-    executa(
-        lambda x, y: x + y,
-        2, 3
-    ),
-    executa(soma, 2, 3),
-    soma(2,3)
-)
+import os
+
+# unir o texto conforme sistema operacional
+caminho = ('Z:\\REPOSITORIO\\PUBLICO\\PYTHON_UDEMY\\Aula_os\\exemplo')
 
 
+print('<==========================================================>')
 
+# separar diretório do arquivo
+arquivo = os.path.split(caminho)
+print(arquivo) # exibir arquivo

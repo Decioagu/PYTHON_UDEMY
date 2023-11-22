@@ -1,4 +1,6 @@
-# Exercício - sistema de perguntas e respostas
+'''
+    Exercício - sistema de perguntas e respostas
+'''
 
 import emoji # importar modulo "emoji"
 import os # importar modulo "os"
