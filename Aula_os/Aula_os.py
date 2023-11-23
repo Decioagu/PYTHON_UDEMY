@@ -95,18 +95,18 @@ import os
 from itertools import count
 
 caminho = os.path.join('/REPOSITORIO', 'PUBLICO', 'PYTHON_UDEMY', 'Aula_os')
-counter = count()
+contador = count()
 
 for rota, pastas, arquivos in os.walk(caminho):
-    the_counter = next(counter)
-    print(the_counter, 'Rota:', rota)
+    meu_contador = next(contador)
+    print(meu_contador, 'Rota:', rota)
 
     for _pasta_ in pastas:
-        print('  ', the_counter, 'Pasta:', _pasta_)
+        print('  ', meu_contador, 'Pasta:', _pasta_)
 
     for _arquivo_ in arquivos:
         caminho_completo_arquivo = os.path.join(rota, _arquivo_)
-        print('  ', the_counter, 'Arquivo:', caminho_completo_arquivo)
+        print('  ', meu_contador, 'Arquivo:', caminho_completo_arquivo)
         
         # os.unlink(caminho_completo_arquivo) # NÃO FAÇA ISSO (VAI APAGAR TUDO DA PASTA)
 
