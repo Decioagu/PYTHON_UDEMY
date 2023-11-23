@@ -90,10 +90,63 @@ for pasta in os.listdir(caminho):
     
 print('<==========================================================>')
 
+# Ver todas as rotas, pastas e arquivos existentes no "caminho" desaguando 
 import os
 from itertools import count
 
 caminho = os.path.join('/REPOSITORIO', 'PUBLICO', 'PYTHON_UDEMY', 'Aula_os')
+counter = count()
+
+for rota, pastas, arquivos in os.walk(caminho):
+    the_counter = next(counter)
+    print(the_counter, 'Rota:', rota)
+
+    for _pasta_ in pastas:
+        print('  ', the_counter, 'Pasta:', _pasta_)
+
+    for _arquivo_ in arquivos:
+        caminho_completo_arquivo = os.path.join(rota, _arquivo_)
+        print('  ', the_counter, 'Arquivo:', caminho_completo_arquivo)
+        
+        # os.unlink(caminho_completo_arquivo) # NÃO FAÇA ISSO (VAI APAGAR TUDO DA PASTA)
+
+print('<==========================================================>')
+
+# os.path.getsize e os.stat para dados dos arquivos (tamanho em bytes)
+import math
+import os
+from itertools import count
+
+
+def formata_tamanho(tamanho_em_bytes: int, base: int = 1024) -> str:
+    """Formata um tamanho, de bytes para o tamanho apropriado"""
+
+    # Original:
+    # https://stackoverflow.com/questions/5194057/better-way-to-convert-file-sizes-in-python
+
+    # Se o tamanho for menor ou igual a 0, 0B.
+    if tamanho_em_bytes <= 0:
+        return "0B"
+
+    # Tupla com os tamanhos
+    #                      0    1     2     3     4     5
+    abreviacao_tamanhos = "B", "KB", "MB", "GB", "TB", "PB"
+    # Logaritmo -> https://brasilescola.uol.com.br/matematica/logaritmo.htm
+    # math.log vai retornar o logaritmo do tamanho_em_bytes
+    # com a base (1000 por padrão), isso deve bater
+    # com o nosso índice na abreviação dos tamanhos
+    indice_abreviacao_tamanhos = int(math.log(tamanho_em_bytes, base))
+    # Por quanto nosso tamanho deve ser dividido para
+    # gerar o tamanho correto.
+    potencia = base ** indice_abreviacao_tamanhos
+    # Nosso tamanho final
+    tamanho_final = tamanho_em_bytes / potencia
+    # A abreviação que queremos
+    abreviacao_tamanho = abreviacao_tamanhos[indice_abreviacao_tamanhos]
+    return f'{tamanho_final:.2f} {abreviacao_tamanho}'
+
+
+caminho = os.path.join('/REPOSITORIO' , 'PUBLICO', 'PYTHON_UDEMY', 'Aula_os', 'exemplo', 'pasta1') 
 counter = count()
 
 for root, dirs, files in os.walk(caminho):
@@ -105,6 +158,10 @@ for root, dirs, files in os.walk(caminho):
 
     for file_ in files:
         caminho_completo_arquivo = os.path.join(root, file_)
-        print('  ', the_counter, 'FILE:', caminho_completo_arquivo)
-        
-        # os.unlink(caminho_completo_arquivo) # NÃO FAÇA ISSO (VAI APAGAR TUDO DA PASTA)
+        # tamanho = os.path.getsize(caminho_completo_arquivo)
+        stats = os.stat(caminho_completo_arquivo)
+        tamanho = stats.st_size
+        print('  ', the_counter, 'FILE:', file_, formata_tamanho(tamanho))
+        # NÃO FAÇA ISSO (VAI APAGAR TUDO DA PASTA)
+        # os.unlink(caminho_completo_arquivo)
+#-----------------------------------------------------------------------------------------------
