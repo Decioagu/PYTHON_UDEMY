@@ -88,6 +88,7 @@ for pasta in os.listdir(caminho):
     for itens in os.listdir(caminho_completo_pasta):
         print('  ', itens)
     
+<<<<<<< Updated upstream
 print('<==========================================================>')
 
 # Ver todas as rotas, pastas e arquivos existentes no "caminho" desaguando 
@@ -164,4 +165,10 @@ for root, dirs, files in os.walk(caminho):
         print('  ', the_counter, 'FILE:', file_, formata_tamanho(tamanho))
         # NÃO FAÇA ISSO (VAI APAGAR TUDO DA PASTA)
         # os.unlink(caminho_completo_arquivo)
+=======
+
+
+
+
+>>>>>>> Stashed changes
 #-----------------------------------------------------------------------------------------------

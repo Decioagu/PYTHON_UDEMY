@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 # os.path.getsize e os.stat para dados dos arquivos (tamanho em bytes)
 import math
@@ -51,3 +52,5 @@ for root, dirs, files in os.walk(caminho):
         print('  ', the_counter, 'FILE:', file_, formata_tamanho(tamanho))
         # NÃO FAÇA ISSO (VAI APAGAR TUDO DA PASTA)
         # os.unlink(caminho_completo_arquivo)
+=======
+>>>>>>> Stashed changes
