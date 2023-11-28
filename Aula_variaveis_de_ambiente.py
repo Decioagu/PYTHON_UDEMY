@@ -1,4 +1,3 @@
-# Variáveis de ambiente com Python (Aula 299 e 300)
 # Para variáveis de ambiente
 # Windows PS: $env:VARIAVEL="VALOR" | dir env:
 # Linux e Mac: export NOME_VARIAVEL="VALOR" | echo $VARIAVEL
