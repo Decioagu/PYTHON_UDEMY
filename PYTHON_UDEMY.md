@@ -25,4 +25,9 @@ Segue abaixo uma lista de exercício _comentados_ em **Python** do curso da plat
 * **015a**  – Lista de tarefa com opção de desfazer itens já excluídos
 * **015b**  – Lista de tarefa com opção de desfazer itens já excluídos gerando arquivo JSON
 * **016**   – Salvar informações de uma classe em JSON e criar a instancia da classe novamente
+* **017a**  – Faça getter e setter em classe em uma fabrica de carros (sem decorador)
+* **017b**  – Faça getter e setter em classe em uma fabrica de carros (com decorador)
+* **018**   – Calcule as datas e parcelas de um empréstimo com datetime
+* **019a**  – Templete para substituir palavras em um texto padrão usando (classe)
+* **019b**  – Templete para substituir palavras em um texto padrão usando (função)
 ***
