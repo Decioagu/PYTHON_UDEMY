@@ -14,7 +14,7 @@ Se nada for digitado em nome ou idade:
     exiba "Desculpe, você deixou campos vazios."
 """
 nome = input('\nDigite seu nome: ')
-idade = input('Digite sua idade: \n')
+idade = input('Digite sua idade: ')
 
 if nome and idade:
     print(f'Seu nome é {nome}')
