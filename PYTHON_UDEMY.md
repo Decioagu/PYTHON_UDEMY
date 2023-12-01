@@ -30,4 +30,5 @@ Segue abaixo uma lista de exercício _comentados_ em **Python** do curso da plat
 * **018**   – Calcule as datas e parcelas de um empréstimo com datetime
 * **019a**  – Templete para substituir palavras em um texto padrão usando (classe)
 * **019b**  – Templete para substituir palavras em um texto padrão usando (função)
+* **020**   – Extrair informação do módulo importado (import)
 ***
