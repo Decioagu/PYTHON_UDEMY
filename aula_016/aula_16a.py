@@ -11,7 +11,8 @@
 
 import json
 
-arquivo_json = "z:\\REPOSITORIO\\PUBLICO\\PYTHON_UDEMY\\016.py\\aula16a.json"
+arquivo_json = "p:\\REPOSITORIO\\PUBLICO\\PYTHON_UDEMY\\aula_016\\aula_16a.json"
+
 
 # (inicio) execução no modulo aula16b.py
 class Pessoa:

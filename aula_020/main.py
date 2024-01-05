@@ -14,3 +14,6 @@ print('===================================================================')
 print(uma_linha.funcao()) # acessa função dentro do módulo uma_linha
 print('===================================================================')
 help(uma_linha) # descreve informações do módulo
+
+if __name__ == '__main__':
+    print('\nArquivo em execução => ',__file__, '\n')

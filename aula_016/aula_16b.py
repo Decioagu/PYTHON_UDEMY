@@ -5,16 +5,21 @@
 # Faça em arquivos separados.
 
 import json
-from aula16a import Pessoa, ver_arquivo_json
+from pathlib import Path
+from aula_16a import Pessoa, ver_arquivo_json
 
 '''
     OBS: Tudo que não estiver envolvido dentro de uma função ou condição no modulo aula16a.py
     será executado o programa.
 '''
 
-arquivo_json = "z:\\REPOSITORIO\\PUBLICO\\PYTHON_UDEMY\\016.py\\aula16a.json" # nome do arquivo a ser criado
+# Caminhos para pasta
+CAMINHO_RAIZ = Path(__file__).parent
+CAMINHO_ARQUIVO = CAMINHO_RAIZ / 'aula_16a.json'
+arquivo_json = CAMINHO_ARQUIVO # p:\REPOSITORIO\PUBLICO\PYTHON_UDEMY\aula_016\aula_16a.json
+# print(arquivo_json)
 
-ver_arquivo_json() # (importado "aula16a")
+ver_arquivo_json() # (importado "aula_16a")
 
 # ler arquivo externo
 with open(arquivo_json, "r") as texto:

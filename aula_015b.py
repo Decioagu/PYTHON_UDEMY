@@ -17,7 +17,7 @@ os.system('cls') # limpa o terminal iniciando o programa (SISTEMA OPERACIONAL)
 # variáveis globais
 lista_auxiliar = [] # lista auxiliar
 lista_usuario = [] # lista principal
-arquivo_json = "015b.json"
+arquivo_json = "aula_015b.json"
 loop = True
 
 #-------------------------------------------------------------
@@ -26,7 +26,8 @@ def ler(arquivo):
         ver = []
         with open(arquivo, "r") as texto:
             ver = json.load(texto)
-            print(ver)
+            for i in ver:
+                print(f'* {i}')
     except FileNotFoundError:
         print('Lista esta vazia...')
     else:
@@ -42,7 +43,7 @@ def adicionar(t):
             lista_auxiliar.append(t)
         if t not in lista_usuario: # se "t" não estiver na lista "lista_usuario"
             lista_usuario.append(t)
-            with open("015b.json", "w") as criar:
+            with open("aula_015b.json", "w") as criar:
                 json.dump(lista_usuario, criar, indent=2, ensure_ascii=False) # criar arquivo json
             print('Tarefa adicionada com sucesso.')
         else: # se "t" ja estiver na lista "lista_usuario"
@@ -56,8 +57,8 @@ def  excluir(t):
 
     try:
         lista_usuario.remove(t) # exclui itens pelo nome da "lista_usuario"
-        with open("015b.json", "w") as criar:
-            json.dump(lista_usuario, criar) # criar arquivo json 
+        with open("aula_015b.json", "w") as criar:
+            json.dump(lista_usuario, criar, ensure_ascii=False, indent=2) # criar arquivo json 
     except ValueError: # se "t" não estiver na "lista_usuario"  mostra lista 
         print()
         print(f'LISTA DE TAREFA:')
@@ -83,6 +84,8 @@ def desfazer():
             lista_usuario.append(lista_auxiliar[(len(lista_auxiliar)-1)- index])
             print(f'Adicionada novamente tarefa => "{lista_auxiliar[(len(lista_auxiliar)-1)- index]}"')
             confirmacao = False
+            with open("aula_015b.json", "w+") as criar:
+                json.dump(lista_usuario, criar, indent=2, ensure_ascii=False) # criar arquivo json
             break # interrompe o loop "for"
 
     if confirmacao: # se conteudo das lista "lista_auxiliar" e "lista_usuario" forem iguais
